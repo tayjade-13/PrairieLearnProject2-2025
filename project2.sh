@@ -1,12 +1,6 @@
 #! usr/bin.env bash
 
-arr=(10 20 40)
-
-num=0
-while [ $num -lt 3 ];
+for arg in "$@"
 do
-	# echo ${arr[num]}
-	python3 programA.py ${arr[num]}
-        num=$((num+1))
+	echo $arg.py
 done
-
