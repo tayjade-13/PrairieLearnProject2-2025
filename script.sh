@@ -3,18 +3,19 @@
 
 arr=(10 20 40)
 
-<< 'comment'
-for arg in "${@:2}"
+for arg in ${@:2}
 do
 	num=0
 	while [ $num -lt 3 ];
 	do
-		python3 "$arg.py" "${arr[num]}" $1 >> "$arg.output"
+		python3 $arg.py ${arr[num]} $1 >> $arg.output
+
 		num=$((num+1))
 	
 	done
 done
-comment
+
+<< 'testing'
 
 num=0
 while [ $num -lt 3 ];
@@ -30,3 +31,4 @@ do
         
 
 done
+testing
